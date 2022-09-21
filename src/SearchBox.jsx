@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { kappa } from './AddBox.jsx'
+import { dataBase } from './AddBox.jsx'
 
 let word = '';
 
@@ -17,8 +17,8 @@ export function SearchBox() {
 export function SearchButton() {
     let [message, setMessage] = useState([''])
     function updateMessage() {
-        for (let i = 1; i <= kappa.length; ++i) {
-            if (word === kappa[i]) {
+        for (let i = 1; i <= dataBase.length; ++i) {
+            if (word === dataBase[i]) {
                 setMessage('Your word is in the dictionary')
                 break;
             } else {
@@ -26,6 +26,7 @@ export function SearchButton() {
             }
         }
     }
+
     return(
         <div>
             <button onClick={() => updateMessage()}>Search Button</button>

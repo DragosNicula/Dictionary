@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export let kappa = [''];
+export let dataBase = [''];
 let wordTransfer = '';
 
 export function AddBox() {
@@ -16,8 +16,8 @@ export function AddBox() {
 
 export function AddButton() {
     let [word, setWord] = useState([]);
-    kappa.push(word);
-    kappa.map((value, index) => {});
+    dataBase.push(word);
+    dataBase.map((value, index) => {});
    
     return (
         <div>
