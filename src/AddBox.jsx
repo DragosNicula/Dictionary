@@ -1,27 +1,26 @@
 import React, { useState } from 'react'
-
-export let dataBase = [''];
-let wordTransfer = '';
+export let dataBase = [];
 
 export function AddBox() {
-    let [addBoxInput, setaddBoxInput] = useState('');
-    wordTransfer = addBoxInput
+    let [userInputAddBox, setUserInputAddBox] = useState('');
 
+    function updateInput(event) {
+        setUserInputAddBox(event.target.value)
+    }
+    
+    function DataBaseUpdate() {
+        dataBase.push(userInputAddBox);
+        dataBase.map((value, index) => {});
+    }
+    
     return (
         <div>
-            <input onChange={e => setaddBoxInput( e.target.value )}></input>
+            <input type='text' onChange={(event) => updateInput(event)}></input>
+            <br></br>
+            <br></br>
+            <button onClick={() => DataBaseUpdate()}>Add Button</button>
         </div>
     )
 }
 
-export function AddButton() {
-    let [word, setWord] = useState([]);
-    dataBase.push(word);
-    dataBase.map((value, index) => {});
-   
-    return (
-        <div>
-            <button onClick={() => setWord(wordTransfer)}>Add Button</button>
-        </div>
-    )
-}
+
