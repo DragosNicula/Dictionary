@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import { Button } from './Button';
+import { InputBox } from './InputBox';
+
 
 export function AddBox(props) {
     let [addWord, setAddWord] = useState('');
 
     function updateDataBase() {
-        props.dataBase.push(addWord);
+        props.setDataBase(oldArray => [...oldArray, addWord]);
     }
 
     return(
         <div>
-            <input type="text" onChange={(e) => setAddWord(e.target.value)}></input>
+            <InputBox  change={(e) => setAddWord(e.target.value)} placeholder={"Add word here..."}/>
             <br></br>
-            <br></br>
-            <button onClick={() => updateDataBase()}>Add Button</button>
+            <Button class={"btn btn-outline-danger"} name={"Add Button"} event={updateDataBase}/>
         </div>
     )
 }
