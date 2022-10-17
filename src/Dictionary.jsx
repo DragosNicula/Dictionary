@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AddBox } from './Addbox.jsx'
-import { SearchBox } from './Searchbox.jsx'
+import { AddBox } from './AddBox.jsx'
+import { SearchBox } from './SearchBox.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Dictionary() {
